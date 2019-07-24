@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Header from '../components/Header'
+import App from '../App'
+import NewDog from './NewDog'
 import {
   Col, Container, Row, ListGroup
 } from 'react-bootstrap'
