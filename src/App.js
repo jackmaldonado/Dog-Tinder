@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from './components/Header'
+import { getDogs } from './api'
 import {
     BrowserRouter as Router,
     Switch,
@@ -14,44 +15,24 @@ class App extends Component {
     constructor(props){
         super(props)
         this.state = {
-            dogs: [
-                {
-                    id:1,
-                    name: "Peewee",
-                    age: 8,
-                    enjoys: "Snoozing"
-                },
-                {
-                    id: 2,
-                    name: "Dez",
-                    age: 4,
-                    enjoys: "Chillin"
-                },
-                {
-                    id: 3,
-                    name: "Barkley",
-                    age: 8,
-                    enjoys: "Sun Bathing"
-                },
-                {
-                    id: 4,
-                    name: "Royce",
-                    age: 3,
-                    enjoys: "Terrorizing"
-                },
-                {
-                    id: 5,
-                    name: "Emma",
-                    age: 1,
-                    enjoys: "Being Cute"
-                }
-            ]
+            dogs: []
         }
     }
 
     handleNewDog = (e) => {
         console.log(e)
     }
+
+
+    componentDidMount() {
+  getDogs()
+	.then(APIdogs => {
+	  this.setState({
+		dogs: APIdogs
+	  })
+	})
+    }
+
 
     // <Route exact path="/" render={( props) => <NewDog newdogs={this.state.dogs} />} />
     render(){
