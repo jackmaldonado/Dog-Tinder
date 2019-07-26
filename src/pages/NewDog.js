@@ -8,7 +8,7 @@ import {
     Button,
     Form
 } from 'react-bootstrap'
-
+import { Redirect } from 'react-router-dom'
 import Dogs from '../pages/Dogs'
 // import NewDog from './pages/NewDog'
 
@@ -32,14 +32,22 @@ constructor(props){
     }
 
     buttonClick = () => {
+        // console.log("clicked")
         this.props.theDog(this.state.form)
     }
+
+    // deleteDog = () => {
+    //     // console.log("clicked")
+    //     this.props.theDog(this.state.form)
+    // }
 
     render(){
 
         return (
             <div>
             <Container>
+
+
 
             <legend>About</legend>
             <Form.Group controlId="name">
@@ -77,11 +85,17 @@ constructor(props){
                 onChange={this.handleChange}
                 value={this.state.form.enjoys}/>
             </Form.Group>
-            <button id="submit" label="submit" type="submit" class="btn btn-primary"
+            <button type="reset" id="submit" label="submit" type="submit" class="btn btn-primary"
             onClick={this.buttonClick}>Create Profile
             </button>
 
+            {this.props.success &&
+                <Redirect to="/dogs" />
+            }
+
             </Container>
+
+
             </div>
         );
     }

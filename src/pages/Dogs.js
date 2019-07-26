@@ -17,8 +17,10 @@ class Dogs extends Component {
                     {this.props.dogs.map((dog, index) =>{
                         return (
                             <ListGroup.Item key={index}>
+
                         <h4>
                             <span className='dog-name'>{dog.name}</span> - <small className='dog-age'>{dog.age} years old</small>
+
                         </h4>
                             <span className='dog-enjoys'>{dog.enjoys}</span>
                     </ListGroup.Item>
