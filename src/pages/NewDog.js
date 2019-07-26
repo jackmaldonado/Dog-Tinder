@@ -36,10 +36,10 @@ constructor(props){
         this.props.theDog(this.state.form)
     }
 
-    // deleteDog = () => {
-    //     // console.log("clicked")
-    //     this.props.theDog(this.state.form)
-    // }
+    deleteDog = () => {
+        // console.log("clicked")
+        this.props.theDog(this.state.form)
+    }
 
     render(){
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from './components/Header'
 import { getDogs } from './api'
 import { createDog } from './api'
+import { deleteDog } from './api'
 import {
     BrowserRouter as Router,
     Switch,
